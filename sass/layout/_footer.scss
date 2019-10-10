@@ -1,0 +1,73 @@
+@import "../abstracts/animation";
+@import "../abstracts/mixin";
+@import "../abstracts/variables";
+
+@include font-face("Ubuntu-Light", "../../fonts/Ubuntu-Light");
+
+.footer{
+    width: 100%;
+    padding: 100px 0;
+    background-color: $color-white-2;
+    .footer-container{
+        width: 1140px;
+        margin: 0 auto;
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            .col-3{
+                h3{
+                    font-family: 'Ubuntu-Light';
+                    padding-top: 15px;
+                }
+                p{
+                    font-size: 14px;
+                    color: $color-grey-2;
+                    padding-top: 25px;
+                    letter-spacing: 1px;
+                }
+            }
+            .col-5{
+                .row{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;  
+                     .col-4 {
+                        h3{
+                            font-family: 'Ubuntu-Light';
+                        }
+                        ul{
+                            width: 100%;
+                            list-style: none;
+                            margin-top: 25px;
+                            li{
+                                padding-bottom: 15px;
+                                a{
+                                    display: block;
+                                    text-decoration: none;
+                                    font-size: $font-s2;
+                                    color: $color-grey-2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+             .col-3{
+                h3{
+                    font-family: 'Ubuntu-Light';
+                }
+                    a{
+                    display: inline-block;
+                    padding: 25px 10px 10px 10px ;
+                    color: $color-grey-2;                    
+                }
+            }
+            .col-12{
+                padding-top: 50px!important;
+                text-align: center;
+                color: $color-grey-2;
+            }   
+        }
+    }
+}

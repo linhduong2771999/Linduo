@@ -1,0 +1,40 @@
+@mixin bgColorAndColor($background, $color) {
+    background-color: $background;
+    color: $color;
+}
+
+@mixin button{
+    outline: none;
+    border: none;
+    background-color: #f8a42a;
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+@mixin title{
+	font-family: "Ubuntu-Light"!important;
+		  font-size: $font-s6;
+		  text-align: center
+}
+
+@mixin box-shadow($params) {
+	-webkit-box-shadow: $params;
+	-moz-box-shadow: $params;
+	box-shadow: $params;
+}
+
+
+// font-face mixin
+
+@mixin font-face($font-family, $url) {
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('#{$url}.eot');
+		src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
+		     url('#{$url}.woff') format('woff'),
+		     url('#{$url}.ttf') format('truetype'),
+		     url('#{$url}.svg') format('svg');
+		}
+}

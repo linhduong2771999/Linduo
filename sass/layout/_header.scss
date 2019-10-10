@@ -1,0 +1,135 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixin";
+
+#header {
+  width: 100%;
+  position: fixed;
+  z-index: 200;
+  .navbar-mobile {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: $color-white-2;
+    z-index: 10;
+    display: none;
+    .col-12{
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;  
+        h3{
+          @include title();
+          margin-right: 20px;
+        }
+        .btn-open-navbar{
+          padding: 10px 15px!important;
+          background-color: $color-white-2!important;
+          @include button();
+        }
+      }
+    }
+  }
+  .header-wrap {
+    .btn-close-navbar {
+      @include button();
+      color: $color-white-1;
+      background-color: transparent !important;
+      float: right;
+      font-size: $font-s5;
+      display: none;
+    }
+    width: 100%;
+    padding: 30px 0;
+    .navbar {
+      display: flex;
+      justify-content: center;
+      letter-spacing: 1px;
+      clear: both;
+      > ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        > li {
+          display: inline-block;
+          position: relative;
+          &:hover > ul {
+            opacity: 1;
+            visibility: visible;
+            top: 50px;
+          }
+          // level 2 dropdown
+          > ul {
+            position: absolute;
+            list-style: none;
+            min-width: 240px;
+            background-color: $color-brown-1;
+            opacity: 0;
+            visibility: hidden;
+            top: 0;
+            > li:nth-child(2) {
+              > a::after {
+                content: "\f105";
+                padding-left: 60px;
+                font-family: FontAwesome;
+              }
+            }
+            > li {
+              a {
+                display: block;
+                text-align: left;
+                padding: 15px 22px;
+                color: white !important;
+              }
+              &:hover > ul {
+                opacity: 1;
+                visibility: visible;
+              }
+              &:hover > a {
+                background-color: rgb(29, 29, 25);
+              }
+              // level 3 dropdown
+              > ul {
+                list-style: none;
+                position: absolute;
+                background-color: $color-brown-1;
+                min-width: 240px;
+                opacity: 0;
+                visibility: hidden;
+                top: 49.5px;
+                left: 100%;
+                > li {
+                  > a {
+                    display: block;
+                    text-align: left;
+                    color: white !important;
+                  }
+                  &:hover > a {
+                    background-color: rgb(29, 29, 25);
+                  }
+                }
+              }
+            }
+          }
+          a {
+            display: inline-block;
+            padding: 8px 22px;
+            text-decoration: none;
+            @include bgColorAndColor(none, $color-grey-1);
+            &:hover {
+              color: $color-white-1 !important;
+            }
+          }
+        }
+      }
+      .nav-brand {
+        a {
+          text-decoration: none;
+          font-size: $font-s6;
+          margin: 0 30px;
+          @include bgColorAndColor(none, $color-white-1);
+        }
+      }
+    }
+  }
+}

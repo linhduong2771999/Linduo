@@ -1,0 +1,99 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixin";
+@import "../abstracts/animation";
+@import "../base/grid";
+// font-face from mixin
+@include font-face("Ubuntu-LightItalic", "../../fonts/Ubuntu-LightItalic");
+
+#view {
+  height: 100vh;
+  .view-container {
+    .view-content {
+      position: absolute;
+      margin-top: 300px;
+      color: $color-white-1;
+      z-index: 10;
+      .row {
+        padding: 10px;
+        .text-title,
+        .text-secondary,
+        .text-lead {
+          padding: 15px 5px;
+          letter-spacing: 1px;
+          margin-left: -100px;
+          opacity: 0;
+        }
+        .text-title {
+          font-size: 56px;
+          font-family: "Ubuntu-LightItalic";
+          font-weight: 500;
+          letter-spacing: 3px !important;
+          @include animation(none, 1s, moves, none, forwards);
+          @include keyframes(moves) {
+            from {
+              opacity: 0;
+              margin-left: -100px;
+            }
+            to {
+              opacity: 1;
+              margin-left: 0;
+            }
+          }
+        }
+        .text-secondary {
+          color: $color-grey-2;
+          font-size: $font-s4;
+          font-style: italic;
+          @include animation(0.5s, 1s, moves, none, forwards);
+          @include keyframes(moves) {
+            from {
+              opacity: 0;
+              margin-left: -100px;
+            }
+            to {
+              opacity: 1;
+              margin-left: 0;
+            }
+          }
+          span {
+            margin: 0 15px;
+          }
+        }
+        .text-lead {
+          font-size: $font-s4;
+          line-height: 30px;
+          @include animation(0.8s, 1s, moves, none, forwards);
+          @include keyframes(moves) {
+            from {
+              opacity: 0;
+              margin-left: -100px;
+            }
+            to {
+              opacity: 1;
+              margin-left: 0;
+            }
+          }
+        }
+        .contact-btn {
+          @include button();
+          a {
+            font-size: $font-s3;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: $color-white-1;
+          }
+          &:hover {
+            @include bgColorAndColor($color-black-1, $color-white-1);
+            margin-left: 50px;
+          }
+        }
+      }
+    }
+  }
+  .img-face {
+    position: absolute;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+  }
+}
